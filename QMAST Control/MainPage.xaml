@@ -8,8 +8,14 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" Text="Hello QMAST!!" TextWrapping="Wrap" VerticalAlignment="Top"/>
-
-    </Grid>
+    <NavigationView x:Name="nvSample" Header="QMAST Control">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Icon="Home" Content="Overview" Tag="SamplePage1" />
+            <NavigationViewItem Icon="Globe" Content="Map" Tag="SamplePage2" />
+            <NavigationViewItem Icon="Map" Content="Routes" Tag="SamplePage3" />
+            <NavigationViewItem Icon="Keyboard" Content="Remote" Tag="SamplePage3" />
+            <NavigationViewItem Icon="Remote" Content="Console" Tag="SamplePage3" />
+        </NavigationView.MenuItems>
+        <Frame x:Name="contentFrame"/>
+    </NavigationView>
 </Page>
