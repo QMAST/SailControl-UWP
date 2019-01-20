@@ -20,16 +20,17 @@
             <Grid Width="240" Height="120" Background="Gray">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="120" />
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="120" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <Rectangle Fill="Black" Grid.Column="0" Grid.Row="0" />
-                <Rectangle Fill="Black" Grid.Column="1" Grid.Row="0" />
-                <Button Content="Connect" Grid.Row="0" HorizontalAlignment="Center" Height="120" Margin="5,5,2.5,5" VerticalAlignment="Center" Width="120"/>
-                <Button Content="Disconnect" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" Height="120" Margin="2.5,5,5,5" VerticalAlignment="Center" Width="120"/>
+                <Rectangle Fill="Black" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" />
+                <Rectangle Fill="Black" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" />
+                <Button Content="Connect" HorizontalAlignment="Center" Height="120" VerticalAlignment="Center" Width="120"/>
+                <Button Content="Disconnect" HorizontalAlignment="Left" Height="120" Margin="119,0,0,0" VerticalAlignment="Center" Width="120" Grid.ColumnSpan="3"/>
             </Grid>
         </Frame>
     </NavigationView>
