@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="QMAST_Control.App">
-      <uap:VisualElements DisplayName="QMAST" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="QMAST Control" BackgroundColor="#212121">
+      <uap:VisualElements DisplayName="QMAST SailControl" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="QMAST Control" BackgroundColor="#212121">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png" ShortName="QMAST">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square150x150Logo" />
