@@ -26,5 +26,62 @@ namespace QMAST_Control
         {
             this.InitializeComponent();
         }
+        #region NavigationView event handlers
+        private void nvTopLevelNav_Loaded(object sender, RoutedEventArgs e)
+        {
+            // set the initial SelectedItem
+            foreach (NavigationViewItemBase item in nvTopLevelNav.MenuItems)
+            {
+                if (item is NavigationViewItem && item.Tag.ToString() == "home_page")
+                {
+                    nvTopLevelNav.SelectedItem = item;
+                    break;
+                }
+            }
+            contentFrame.Navigate(typeof(Views.overviewPage));
+        }
+        private void nvTopLevelNav_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+        }
+
+        private void nvTopLevelNav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+            TextBlock ItemContent = args.InvokedItem as TextBlock;
+            if (ItemContent != null)
+            {
+                switch (ItemContent.Tag)
+                {
+                    case "Nav_Overview":
+                        contentFrame.Navigate(typeof(Views.overviewPage));
+                        break;
+
+                    case "Nav_Routes":
+                        contentFrame.Navigate(typeof(Views.routesPage));
+                        break;
+
+                    case "Nav_Map":
+                        contentFrame.Navigate(typeof(Views.mapPage));
+                        break;
+
+                    case "Nav_Remote":
+                        contentFrame.Navigate(typeof(Views.remotePage));
+                        break;
+
+                    case "Nav_Console":
+                        contentFrame.Navigate(typeof(Views.consolePage));
+                        break;
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+        #endregion
     }
 }

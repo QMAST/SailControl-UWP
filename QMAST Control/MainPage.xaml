@@ -8,30 +8,31 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <NavigationView x:Name="nvSample" Header="QMAST Control">
+
+    <NavigationView x:Name="nvTopLevelNav" 
+                    Loaded="nvTopLevelNav_Loaded"
+                    Margin="0,12,0,0"
+                    SelectionChanged="nvTopLevelNav_SelectionChanged"
+                    ItemInvoked="nvTopLevelNav_ItemInvoked"
+                    IsTabStop="False"
+                    Header="QMAST CONTROL">
         <NavigationView.MenuItems>
-            <NavigationViewItem Icon="Home" Content="Overview" Tag="SamplePage1" />
-            <NavigationViewItem Icon="Globe" Content="Map" Tag="SamplePage2" />
-            <NavigationViewItem Icon="Map" Content="Routes" Tag="SamplePage3" />
-            <NavigationViewItem Icon="Keyboard" Content="Remote" Tag="SamplePage3" />
-            <NavigationViewItem Icon="Remote" Content="Console" Tag="SamplePage3" />
+            <NavigationViewItem Icon="Home" Tag="home_page" >
+                <TextBlock Tag="Nav_Overview">Overview</TextBlock>
+            </NavigationViewItem>
+            <NavigationViewItem Icon="Globe" Tag="map_page" >
+                <TextBlock Tag="Nav_Map">Map</TextBlock>
+            </NavigationViewItem>
+            <NavigationViewItem Icon="Map" Tag="routes_page" >
+                <TextBlock Tag="Nav_Routes">Routes</TextBlock>
+            </NavigationViewItem>
+            <NavigationViewItem Icon="Keyboard" Tag="remote_page" >
+                <TextBlock Tag="Nav_Remote">Remote</TextBlock>
+            </NavigationViewItem>
+            <NavigationViewItem Icon="Remote" Tag="console_page" >
+                <TextBlock Tag="Nav_Console">Console</TextBlock>
+            </NavigationViewItem>
         </NavigationView.MenuItems>
-        <Frame x:Name="contentFrame">
-            <Grid Width="240" Height="120" Background="Gray">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="120" />
-                    <ColumnDefinition Width="5*" />
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="120" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Rectangle Fill="Black" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" />
-                <Rectangle Fill="Black" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" />
-                <Button Content="Connect" HorizontalAlignment="Center" Height="120" VerticalAlignment="Center" Width="120"/>
-                <Button Content="Disconnect" HorizontalAlignment="Left" Height="120" Margin="119,0,0,0" VerticalAlignment="Center" Width="120" Grid.ColumnSpan="3"/>
-            </Grid>
-        </Frame>
+        <Frame x:Name="contentFrame"/>
     </NavigationView>
 </Page>
