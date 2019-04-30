@@ -127,6 +127,9 @@
     <Compile Include="Views\consolePage.xaml.cs">
       <DependentUpon>consolePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EditRoutePage.xaml.cs">
+      <DependentUpon>EditRoutePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\mapPage.xaml.cs">
       <DependentUpon>mapPage.xaml</DependentUpon>
     </Compile>
@@ -208,6 +211,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\EditRoutePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\mapPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -226,11 +233,19 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite">
+      <Version>2.2.4</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.3</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\RoutePage.Model\RoutePage.Model.csproj">
+      <Project>{833b56c9-6a7c-4d71-9651-698d146727cc}</Project>
+      <Name>RoutePage.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

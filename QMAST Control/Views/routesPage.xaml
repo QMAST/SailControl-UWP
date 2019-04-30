@@ -6,9 +6,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
-
+    Loaded="Page_Loaded">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBox Name="NewRoute"></TextBox>
+            <Button Click="Add_Click">Add</Button>
+            <ListView Name="Routes">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Button Tag="{Binding RouteId}" Click="Edit_Click" Content="{Binding RouteId}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <Frame Name="MyFrame"></Frame>
     </Grid>
 </Page>
+
+
